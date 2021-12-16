@@ -1,0 +1,5 @@
+#!/bin/bash
+#php setup/setup.php --yes reload-control-structure
+#php setup/setup.php --yes achieve common.registerNICKey
+# "function getNamedObjective" suchen
+php setup/setup.php --yes achieve uicore.reloadCtrlStructure

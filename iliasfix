@@ -1,0 +1,7 @@
+#!/bin/bash
+fix_files=$1;
+if [ -z "$1" ]
+  then
+    fix_files=`git diff --name-only`
+fi
+libs/composer/vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --using-cache=no --config=./CI/PHP-CS-Fixer/code-format.php_cs $fix_files

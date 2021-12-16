@@ -1,0 +1,3 @@
+#!/bin/bash
+php /opt/composer/composer.phar install
+php setup/setup.php install --yes config.json

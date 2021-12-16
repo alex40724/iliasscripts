@@ -1,0 +1,3 @@
+#!/bin/bash
+libs/composer/vendor/bin/rector process --config ./CI/Rector/rector.php --no-diffs $1
+libs/composer/vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix $1 --using-cache=no --config=./CI/PHP-CS-Fixer/code-format.php_cs

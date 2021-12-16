@@ -1,0 +1,4 @@
+#!/bin/bash
+git pl
+php /opt/composer/composer.phar dump-autoload
+php setup/setup.php update --yes --no-plugins --ignore-db-update-messages config.json
