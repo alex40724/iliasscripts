@@ -1,5 +1,7 @@
 #!/bin/bash
+php /opt/composer/composer.phar dump-autoload
 #php setup/setup.php --yes reload-control-structure
 #php setup/setup.php --yes achieve common.registerNICKey
 # "function getNamedObjective" suchen
-php setup/setup.php --yes achieve uicore.reloadCtrlStructure
+# php setup/setup.php --yes achieve uicore.reloadCtrlStructure
+php setup/setup.php --yes achieve uicore.buildIlCtrlArtifacts

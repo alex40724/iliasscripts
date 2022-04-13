@@ -1,7 +1,17 @@
 #!/bin/bash
+fix_files1=$1;
 fix_files=$1;
 if [ -z "$1" ]
   then
-    fix_files=`git diff --name-only`
+    fix_files1=`git diff --name-only`
+    fix_files2=`git diff --cached  --name-only`
+    fix_files=("${fix_files1[@]}" "${fix_files2[@]}")
+    #echo "${fix_files[@]}"
 fi
-libs/composer/vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --using-cache=no --config=./CI/PHP-CS-Fixer/code-format.php_cs $fix_files
+
+if [ ! -z "$fix_files1" ] || [ ! -z "$fix_files2" ]
+  then
+    #echo "DOING"
+    libs/composer/vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --using-cache=no --config=./CI/PHP-CS-Fixer/code-format.php_cs ${fix_files[@]}
+    libs/composer/vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --using-cache=no --config=./CI/PHP-CS-Fixer/code-format.php_cs ${fix_files[@]}
+fi

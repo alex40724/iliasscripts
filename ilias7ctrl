@@ -1,0 +1,3 @@
+#!/bin/bash
+php /opt/composer/composer.phar dump-autoload
+php setup/setup.php --yes achieve uicore.reloadCtrlStructure
